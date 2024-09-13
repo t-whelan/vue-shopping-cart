@@ -36,6 +36,14 @@
       </v-list-item-group>
     </v-list>
   </v-container>
+
+  <!-- Checkout Button -->
+  <v-btn v-if="isCheckoutPage()" @click="checkout" class="checkout-btn">Checkout</v-btn>
+
+  <!-- Thank You Message -->
+  <div v-if="showThankYou" class="thank-you-message">
+    <p>Thank you for shopping with us!</p>
+  </div>
 </template>
 
 <script setup>
@@ -97,6 +105,16 @@ const goBack = () => {
   router.push({ name: 'items-list' });
 };
 
+const isCheckoutPage = () => {
+  return route.name === 'checkout';
+};
+
+const checkout = () => {
+  window.alert('Thank you for shopping with us!');
+};
+
+const showThankYou = ref(false);
+
 onMounted(() => {
   try {
     const initialCartItems = JSON.parse(route.query.cartItems || '[]');
@@ -111,6 +129,10 @@ onMounted(() => {
   }
 });
 </script>
+
+
+
+
 
 <style scoped>
 /* Order summary container */
@@ -214,5 +236,21 @@ onMounted(() => {
 .back-btn:hover {
   background-color: #0056b3;
   cursor: pointer;
+}
+
+.checkout-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin: 7px;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+  cursor: pointer;
+ margin: 7px;
 }
 </style>
