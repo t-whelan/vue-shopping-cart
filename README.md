@@ -14,6 +14,7 @@ Links🖇️
 🌐Project Demo:  https://vuejs-shopping-cart.netlify.app/
 
 🗃️Portfolio: https://next-js-portfolio-gules-rho.vercel.app/
+<br>
 🔵Linkedin: https://www.linkedin.com/in/tionne-whelan/
 
 ♻️Technologies Used:
