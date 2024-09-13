@@ -6,7 +6,7 @@
       <p class="summary-2">Total Cost: ${{ totalCost.toFixed(2) }}</p>
     </div>
 
-    <h2 class="mt-9 mb-9 text-align-center bg-blue">Items List</h2>
+    <h2 class="mt-9 mb-9 text-align-center bg-blue" style="padding: 15px;">Items List</h2>
     <v-row>
       <v-col v-for="product in products" :key="product.sku" cols="12" lg="6" md="6" sm="12">
         <v-card class="item-card">
