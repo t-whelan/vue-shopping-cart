@@ -10,9 +10,13 @@ State Management: Utilizes Vuex for centralized state management.
 TypeScript: Enhances code quality and maintainability with TypeScript's strong typing.
 
 Links🖇️
-Project Demo <!-- Add a link to your deployed project -->
-Portfolio <!-- Add a link to your portfolio -->
-Technologies Used
+
+🌐Project Demo:  https://vuejs-shopping-cart.netlify.app/
+
+🗃️Portfolio: https://next-js-portfolio-gules-rho.vercel.app/
+🔵Linkedin: https://www.linkedin.com/in/tionne-whelan/
+
+♻️Technologies Used:
 Vue.js
 TypeScript
 Vuetify
