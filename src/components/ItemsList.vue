@@ -161,17 +161,20 @@ export default {
   color: #1976d2; /* Blue for item name */
   font-size: 20px;
   font-weight: bold;
+  margin: 20px;
 }
 
 .item-descr {
   font-style: italic;
   font-size: 17px;
+  margin: 20px;
 }
 
 .item-price {
   font-size: 17px;
   font-weight: bold;
   color: #333;
+  margin: 20px;
 }
 
 /* Responsive button layout */

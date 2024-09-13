@@ -46,6 +46,8 @@ const router = useRouter();
 const route = useRoute();
 
 const cartItems = ref([]);
+const maxQuantityLimit = 5; // Example maximum quantity limit, can be adjusted
+
 const totalItems = computed(() => {
   return cartItems.value.reduce((sum, item) => sum + item.quantity, 0);
 });
@@ -70,6 +72,12 @@ const addItem = (item) => {
       ? { ...cartItem, quantity: cartItem.quantity + 1 }
       : cartItem
   );
+  
+  if (updatedItems.find(cartItem => cartItem.sku === item.sku).quantity > maxQuantityLimit) {
+    alert(`Quantity limit (${maxQuantityLimit}) for SKU ${item.sku} exceeded!`);
+    return;
+  }
+  
   cartItems.value = updatedItems;
   updateRoute();
 };
@@ -136,18 +144,21 @@ onMounted(() => {
 
 /* Item details styles */
 .item-name {
+  padding: 20px;
   font-size: 21px;
   font-weight: bold;
   margin-bottom: 10px; /* Adds space between name and details */
 }
 
 .item-details {
+  
+  padding: 15px;
   display: flex;
   justify-content: space-between; /* Aligns quantity and price side by side */
 }
 
 .item-quantity, .item-price, .item-total {
-  padding: 4px;
+  padding: 10px;
   font-size: 18px;
   font-style: italic;
   margin-bottom: 4px;
@@ -157,6 +168,7 @@ onMounted(() => {
 .add-btn {
   background-color: #007bff;
   color: white;
+
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 4px;
